@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class MulService {
 
-    public ApiResult mulCalc(BigDecimal OperandOne,BigDecimal OperandTwo) {
-        return getResult(OperandOne.multiply(OperandTwo));
+    public ApiResult mulCalc(BigDecimal operand_1,BigDecimal operand_2) {
+        return getResult(operand_1.multiply(operand_2));
         
     }
 }

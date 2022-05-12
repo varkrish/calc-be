@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class DivService {
 
-    public ApiResult divCalc(BigDecimal OperandOne,BigDecimal OperandTwo) {
-        return getResult(OperandOne.divide(OperandTwo, RoundingMode.HALF_EVEN));
+    public ApiResult divCalc(BigDecimal operand_1,BigDecimal operand_2) {
+        return getResult(operand_1.divide(operand_2, RoundingMode.HALF_EVEN));
          
     }
 }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SubService {
 
-    public ApiResult subCalc(BigDecimal OperandOne,BigDecimal OperandTwo) {
-        return getResult(OperandOne.subtract(OperandTwo));
+    public ApiResult subCalc(BigDecimal operand_1,BigDecimal operand_2) {
+        return getResult(operand_1.subtract(operand_2));
     }
 }

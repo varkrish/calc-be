@@ -23,11 +23,11 @@ public class DivController {
    private DivService devService;
 
    @GetMapping("/divide")
-   public ApiResult divide(@RequestParam BigDecimal OperandOne, @RequestParam BigDecimal OperandTwo) {
-      if (OperandTwo.equals(BigDecimal.ZERO)) {
+   public ApiResult divide(@RequestParam BigDecimal operand_1, @RequestParam BigDecimal operand_2) {
+      if (operand_2.equals(BigDecimal.ZERO)) {
          return ResultBuilder.getResultFromError("no division by null");
       }
-      return devService.divCalc(OperandOne, OperandTwo);
+      return devService.divCalc(operand_1, operand_2);
    }
 
 }

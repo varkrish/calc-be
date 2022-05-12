@@ -1,31 +1,28 @@
 package com.redhat.openinnovationlabs.microservice.calculator;
 
-import com.redhat.openinnovationlabs.microservice.calculator.service.AddService;
-import com.redhat.openinnovationlabs.microservice.calculator.model.ApiResult;
+import com.redhat.openinnovationlabs.microservice.calculator.service.SubService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
+
+
 
 @SpringBootTest
 @ActiveProfiles("add")
-
-public class AddServiceTests {
+public class SubServiceTests {
 
     @Autowired
-    private AddService addservice;
+    private SubService subService;
 
     @Test
-    void addCalc()
+    void subCalc()
     {
 
         BigDecimal val1 = new BigDecimal(2);
@@ -33,7 +30,7 @@ public class AddServiceTests {
         String expResult = "5";
         //ApiResult result = addservice.addCalc(val1,val2);
         //assertEquals(expResult, null);
-        fail("Add is not implemented ");
+        fail("sub is not implemented ");
 
     }
 

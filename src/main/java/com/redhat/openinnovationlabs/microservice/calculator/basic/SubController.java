@@ -21,8 +21,8 @@ public class SubController {
    private SubService subService;
 
    @GetMapping("/subtract")
-   public ApiResult subtract(@RequestParam BigDecimal OperandOne, @RequestParam BigDecimal OperandTwo) {
-      return subService.subCalc(OperandOne,OperandTwo); 
+   public ApiResult subtract(@RequestParam BigDecimal operand_1, @RequestParam BigDecimal operand_2) {
+      return subService.subCalc(operand_1,operand_2); 
    }
 
    

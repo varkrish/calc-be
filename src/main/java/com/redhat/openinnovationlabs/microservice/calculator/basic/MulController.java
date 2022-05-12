@@ -22,8 +22,8 @@ public class MulController {
    private MulService mulService;
   
    @GetMapping("/multiply")
-   public ApiResult multiply(@RequestParam BigDecimal OperandOne, @RequestParam BigDecimal OperandTwo) {
-      return mulService.mulCalc(OperandOne,OperandTwo); 
+   public ApiResult multiply(@RequestParam BigDecimal operand_1, @RequestParam BigDecimal operand_2) {
+      return mulService.mulCalc(operand_1,operand_2); 
    }
 
    

@@ -21,9 +21,9 @@ public class AddController {
 private AddService addService;
 
    @GetMapping("/add")
-   public ApiResult add(@RequestParam BigDecimal OperandOne, @RequestParam BigDecimal OperandTwo) {
-      //return addService.addCalc(OperandOne,OperandTwo);
-      return null;
+   public ApiResult add(@RequestParam BigDecimal operand_1, @RequestParam BigDecimal operand_2) {
+      return addService.addCalc(operand_1,operand_2);
+     // return null;
    }
 
    

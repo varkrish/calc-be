@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AddService {
 
-   /* public ApiResult addCalc(BigDecimal OperandOne,BigDecimal OperandTwo) {
-        return getResult(OperandOne.add(OperandTwo)); 
-    }*/
+    public ApiResult addCalc(BigDecimal operand_1,BigDecimal operand_2) {
+        return getResult(operand_1.add(operand_2)); 
+    }
 }

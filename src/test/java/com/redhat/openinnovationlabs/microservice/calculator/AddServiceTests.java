@@ -28,11 +28,6 @@ public class AddServiceTests {
     void addCalc()
     {
 
-        BigDecimal val1 = new BigDecimal(2);
-        BigDecimal val2 = new BigDecimal(2);
-        String expResult = "5";
-        //ApiResult result = addservice.addCalc(val1,val2);
-        //assertEquals(expResult, null);
         fail("Add is not implemented ");
 
     }

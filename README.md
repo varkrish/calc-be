@@ -61,20 +61,9 @@ Above step create as a new build config and dependent resources like imagestream
 --> Success
 
 ```
-#### 2.1 Resource limits 
-
-Lets set the resource limits for the builds. 
 
 
-```
-oc patch bc calc-beapp -p '{"spec":{"resources": {"limits": {"cpu": "1500m", "memory": "900Mi"}, "requests": {"cpu": "800m", "memory": "500Mi"}}}}'
-```
-###### Sample output
-```
-buildconfig.build.openshift.io/calc-beapp patched
-```
-
-#### 3. Build the container image based on the local jar file
+#### 4. Build the container image based on the local jar file
 
 ```
 calc-beapp % oc start-build calc-beapp --from-dir ./dist --follow  
@@ -143,7 +132,7 @@ Push successful
 
 Hurray, we have created the application container image without the need for having docker/podman locally. Its time to deploy the image as an application
 
-#### 4. Deploy the image as app
+#### 5. Deploy the image as app
 
 To create an application based on existing image, we will the simplest method i.e. using ``oc new-app`` command.
 Now let's try to deploy the application by passing the required configuration by:

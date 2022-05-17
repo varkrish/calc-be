@@ -151,7 +151,7 @@ Now let's try to deploy the application by passing the required configuration by
 Passing -e environment option during app creation
 
 ```
-oc new-app  --name calc-beapp-add calc-beapp -e spring.profiles.active=add -l deployment=calc-beapp-add
+oc new-app  --name add calc-beapp -e spring.profiles.active=add -l deployment=add
 
 ```
 **Where:**
@@ -163,12 +163,12 @@ oc new-app  --name calc-beapp-add calc-beapp -e spring.profiles.active=add -l de
 --> Found image 5ee3db9 (40 minutes old) in image stream "dev-calc-apps/calc-beapp" under tag "latest" for "calc-beapp"
 
 
---> Creating resources with label deployment=calc-beapp-add ...
-    deployment.apps "calc-beapp-add" created
-    service "calc-beapp-add" created
+--> Creating resources with label deployment=add ...
+    deployment.apps "add" created
+    service "add" created
 --> Success
     Application is not exposed. You can expose services to the outside world by executing one or more of the commands below:
-     'oc expose service/calc-beapp-add' 
+     'oc expose service/add' 
     Run 'oc status' to view your app.
 
 ```
@@ -176,10 +176,10 @@ oc new-app  --name calc-beapp-add calc-beapp -e spring.profiles.active=add -l de
 ##### Let's verify the deployment:
 
 ```
-% oc get pods -l deployment=calc-beapp-add
+% oc get pods -l deployment=add
 
 NAME                              READY   STATUS    RESTARTS   AGE
-calc-beapp-add-8548fc9884-7glmm   1/1     Running   0          3m56s
+add-8548fc9884-7glmm   1/1     Running   0          3m56s
 ```
 
 We can specify additional labels to the deployment even after we create them. For example:
@@ -196,33 +196,34 @@ Now lets test the new application using the below endpoint. This endpoint must r
 operand_2
 
 Test:
-
-% oc get pods -l deployment=calc-beapp-add
+``` 
+% oc get pods -l deployment=add
 NAME                              READY   STATUS    RESTARTS   AGE
-calc-beapp-add-8548fc9884-7glmm   1/1     Running   0          11m
+add-8548fc9884-7glmm   1/1     Running   0          11m
 
-% oc port-forward pod/calc-beapp-add-8548fc9884-7glmm 9000:8100
+% oc port-forward pod/add-8548fc9884-7glmm 9000:8100
 
 Forwarding from 127.0.0.1:9000 -> 8100
 Forwarding from [::1]:9000 -> 8100
+``` 
 
 #### In a new window
-
+``` 
 % curl "localhost:9000/add?operand_1=5&operand_2=5"
 {"result":"10"}
-
-#### 6. Create additional applications/deployments for sub/multiply/divide api using the step 4
+``` 
+#### 6. Create additional applications/deployments for sub/multiply/divide api as mentioned in the step 4
 
 Using the container image we had created earlier, it is possible to deploy any number of applications under different name and activate the profile via environment variable
 
 For example:
 
 ``` 
-oc new-app  --name calc-beapp-sub calc-beapp -e spring.profiles.active=sub -l deployment=calc-beapp-sub
+oc new-app  --name subtract calc-beapp -e spring.profiles.active=sub -l deployment=subtract
 
-oc new-app  --name calc-beapp-mul calc-beapp -e spring.profiles.active=mul -l deployment=calc-beapp-mul
+oc new-app  --name multiply calc-beapp -e spring.profiles.active=mul -l deployment=multiply
 
-oc new-app  --name calc-beapp-div calc-beapp -e spring.profiles.active=div -l deployment=calc-beapp-div
+oc new-app  --name divide calc-beapp -e spring.profiles.active=div -l deployment=divide
 ```
 
 Above command will create another ``deployment`` on openshift with the respective names with the image we have specified.

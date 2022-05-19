@@ -208,11 +208,11 @@ Using the container image we had created earlier, it is possible to deploy any n
 For example:
 
 ``` 
-oc new-app  --name subtract calc-beapp -e spring.profiles.active=sub -l deployment=subtract
+oc new-app  --name subtract calc-beapp  -l deployment=subtract
 
-oc new-app  --name multiply calc-beapp -e spring.profiles.active=mul -l deployment=multiply
+oc new-app  --name multiply calc-beapp  -l deployment=multiply
 
-oc new-app  --name divide calc-beapp -e spring.profiles.active=div -l deployment=divide
+oc new-app  --name divide calc-beapp   -l deployment=divide
 ```
 
 Above command will create another ``deployment`` on openshift with the respective names with the image we have specified.
